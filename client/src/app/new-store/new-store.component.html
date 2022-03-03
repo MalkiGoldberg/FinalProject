@@ -1,0 +1,87 @@
+
+    <section >
+        <div class="container py-4">
+          <div class="row">
+            <div class="col-lg-7 mx-auto d-flex justify-content-center flex-column">
+              <h3 class="text-center">פרטי סניף</h3>
+              <form role="form" id="contact-form" method="post" autocomplete="off">
+                <div class="card-body">
+                  <div class="row">                        
+                   
+                     
+                      <div class="col-md-6">
+                        <div class="input-group input-group-dynamic mb-4">
+                          
+                          <input value={{branch.branchName}} #nameStore class="form-control" aria-label="First Name..." type="text" >
+                          <label class="form-label">מספר סניף</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group input-group-dynamic mb-4">
+                          
+                            <input value={{branch.branchId}} #username class="form-control" aria-label="First Name..." type="text" >
+                            <label class="form-label">שם חנות</label>
+                        </div>
+                      </div>
+                   
+                     
+                    <div class="col-md-6 ps-2">
+                      <div class="input-group input-group-dynamic">
+                      
+                        <input  value="אימות סיסמא" #vertificationPassword (onchange)="equal(password.value,vertificationPassword.value)"  type="text" class="form-control" placeholder="" aria-label="Last Name..." >
+                          
+                          <label class="form-label" >אימות סיסמא</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group input-group-dynamic mb-4">
+                          
+                          <input value={{branch.password}} #password class="form-control" aria-label="First Name..." type="text" >
+                          <label class="form-label"> סיסמא</label>
+                        </div>
+                      </div>
+                   
+                  <div class="col-md-6 ps-2">
+                    <div class="input-group input-group-dynamic">
+                     
+                      <input value={{branch.address}} #address type="text" class="form-control" placeholder="" aria-label="Last Name..." > 
+                      <label class="form-label">כתובת </label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="input-group input-group-dynamic mb-4">
+                      
+                      <input value={{branch.city}} #city class="form-control" aria-label="First Name..." type="text" >
+                      <label class="form-label">עיר</label>
+                    </div>
+                  </div> 
+                  <div class="col-md-6 ps-2">
+                    <div class="input-group input-group-dynamic">
+                     
+                      <input value={{branch.phone}} #phone type="text" class="form-control" placeholder="" aria-label="Last Name..." > 
+                      <label class="form-label">פלאפון</label>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                <i class="fa-solid fa-barcode"></i>
+                 <button class="btn btn-outline-secondary"type="submit" (submit)="signUpBranch(username.value,password.value,nameStore.value,
+                 phone.value,address.value,city.value)">שמירת נתונים</button>
+              </form>
+            </div>
+          </div>
+        </div>
+     <!-- Category -->
+    <h3>קטגוריה</h3>
+    <!-- <div *ngFor="let category of arrCategories" ngModel="categories">
+        {{category.categoryName}} <input [value]=catregory.categoryId name="categorySelect" type="radio" />
+    </div> -->
+    <!-- ChainStore -->
+    <h3>שם רשת</h3>
+    <select name="ChainStoreSelect" [(ngModel)]="chainStore">
+        <option [value]=store.chineStoreId *ngFor="let store of arrChainStore" >{{store.nameChineStore}}
+    </select><br> 
+      </section>
+      
+        ----
+           
